@@ -4,7 +4,7 @@ import socket
 import threading
 import os
 
-# Updated ports and replication factor
+
 REPLICATION_FACTOR = 2
 DATANODES = {
     "node1": 5001,
