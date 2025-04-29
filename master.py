@@ -2,7 +2,7 @@ import time, threading, socket
 from config import DATANODES, REPLICATION_FACTOR
 
 node_status = {node: True for node in DATANODES}
-file_table = {}  # filename: [node1, node2]
+file_table = {}  
 
 def listen_heartbeats():
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -18,7 +18,7 @@ def monitor_nodes():
         for node in node_status:
             if not node_status[node]:
                 print(f"[ALERT] {node} seems down!")
-                # Trigger replication here (not shown)
+                
             node_status[node] = False
 
 if __name__ == "__main__":
